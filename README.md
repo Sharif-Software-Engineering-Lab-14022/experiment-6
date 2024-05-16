@@ -13,23 +13,23 @@ It's the sixth experiment of Software Engineering Lab course in Spring 2024 at S
 
 # شرح آزمایش
 
-## پیاده سازی الگوی State:
+### پیاده سازی الگوی State:
 این الگو برای نشان دادن حالات مختلف یک بسته یعنی In Transit یا Delivered به عنوان کلاس هایی که یک interface مشترک (PackageState) را پیاده سازی می کنند، استفاده شده. کلاس PackageContext یک ارجاع به state فعلی را حفظ می کند و می تواند بر اساس شرایط خاصی بین state ها جابجا شود.
 
-## پیاده سازی الگوی## Strategy:
+### پیاده سازی الگوی Strategy:
 این الگو برای encapsulate کردن استراتژی های حمل و نقل مختلف (ShippingStrategy) استفاده شده است. رابط ShippingStrategy و پیاده‌سازی‌های آن (StandardShippingStrategy، ExpressShippingStrategy) نحوه محاسبه حمل و نقل مختلفی را نشان می‌دهند که به صورت پویا می‌توان آنها را تغییر داد.
 
-### در کل پیاده سازی شامل چندین کلاس و رابط است:
+#### در کل پیاده سازی شامل چندین کلاس و رابط است:
 
-PackageContext: این کلاس context یک بسته را نشان می دهد و state و strategy حمل و نقل آن را مدیریت می کند. این شامل متد هایی برای به روز رسانی state بسته و محاسبه هزینه حمل و نقل است.
+کلاس PackageContext: این کلاس context یک بسته را نشان می دهد و state و strategy حمل و نقل آن را مدیریت می کند. این شامل متد هایی برای به روز رسانی state بسته و محاسبه هزینه حمل و نقل است.
 
-PackageState Interface: این رابط متد هایی را برای دریافت state یک بسته و به روز رسانی state آن تعریف می کند.
+رابط PackageState: این رابط متد هایی را برای دریافت state یک بسته و به روز رسانی state آن تعریف می کند.
 
-InTransitState و DeliveredState: این کلاس‌ها رابط PackageState را پیاده‌سازی می‌کنند و حالت‌های یک بسته را نشان می‌دهند: InTransit و Delivered.
+کلاس های InTransitState و DeliveredState: این کلاس‌ها رابط PackageState را پیاده‌سازی می‌کنند و حالت‌های یک بسته را نشان می‌دهند: InTransit و Delivered.
 
 رابط ShippingStrategy: این رابط متدی را برای محاسبه هزینه حمل و نقل بر اساس وزن بسته تعریف می کند.
 
-StandardShippingStrategy و ExpressShippingStrategy: این کلاس ها رابط ShippingStrategy را پیاده سازی می کنند و روش های مختلفی را برای محاسبه قیمت حمل و نقل ارائه می کنند.
+کلاس های StandardShippingStrategy و ExpressShippingStrategy: این کلاس ها رابط ShippingStrategy را پیاده سازی می کنند و روش های مختلفی را برای محاسبه قیمت حمل و نقل ارائه می کنند.
 
 کلاس Main:
 کلاس Main به عنوان نقطه ورودی برنامه عمل می کند. از کاربر می خواهد که وزن بسته را وارد کرده و یک روش حمل و نقل (Standard یا Express) را انتخاب کند. سپس هزینه حمل و نقل را بر اساس روش انتخابی محاسبه می کند و از کاربر می خواهد که روش ارسال را تغییر دهد یا بسته را به عنوان Delivered انتخاب کند. برنامه تا زمانی ادامه می یابد که بسته به عنوان Delivered علامت گذاری شود.
