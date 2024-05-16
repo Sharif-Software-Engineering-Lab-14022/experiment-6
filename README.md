@@ -8,18 +8,18 @@ It's the sixth experiment of Software Engineering Lab course in Spring 2024 at S
 | Mohammad Amin Lotfi   | 98171075       |
 | Mana Peyravian        | 98170721       |
 
-#مقدمه
+# مقدمه
 هدف از این آزمایش، پیاده‌سازی یک سیستم مدیریت حمل و نقل با استفاده از الگوهای طراحی State و Strategy در جاوا بود. این سیستم انتقال بسته ها را در state های مختلف (In Transit یا Delivered) مدیریت می کند و به کاربران این امکان را می دهد که strategy های حمل و نقل مختلف (Standard یا Express) را انتخاب کنند.
 
-#شرح آزمایش
+# شرح آزمایش
 
-پیاده سازی الگوی## State:
+## پیاده سازی الگوی State:
 این الگو برای نشان دادن حالات مختلف یک بسته یعنی In Transit یا Delivered به عنوان کلاس هایی که یک interface مشترک (PackageState) را پیاده سازی می کنند، استفاده شده. کلاس PackageContext یک ارجاع به state فعلی را حفظ می کند و می تواند بر اساس شرایط خاصی بین state ها جابجا شود.
 
-پیاده سازی الگوی## Strategy:
+## پیاده سازی الگوی## Strategy:
 این الگو برای encapsulate کردن استراتژی های حمل و نقل مختلف (ShippingStrategy) استفاده شده است. رابط ShippingStrategy و پیاده‌سازی‌های آن (StandardShippingStrategy، ExpressShippingStrategy) نحوه محاسبه حمل و نقل مختلفی را نشان می‌دهند که به صورت پویا می‌توان آنها را تغییر داد.
 
-در کل پیاده سازی شامل چندین کلاس و رابط است###:
+### در کل پیاده سازی شامل چندین کلاس و رابط است:
 
 PackageContext: این کلاس context یک بسته را نشان می دهد و state و strategy حمل و نقل آن را مدیریت می کند. این شامل متد هایی برای به روز رسانی state بسته و محاسبه هزینه حمل و نقل است.
 
